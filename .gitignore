@@ -21,8 +21,8 @@ pyglobal*/
 *.pt
 *.pth
 data/models/
-data/datasets/
-data/
+results/
+
 
 # Brouillons
 sanstitre*.py
