@@ -43,7 +43,6 @@ class Interface:
                     options=["binary", 'continuous', 'multiclass', 'multilabel', "explain", "deviner"],
                     key="4"
                     )
-                # target_name = st.text_input("Nom de la target dans les données", key="5")
                 smote = False
                 if what == "fit":
                     smote = st.selectbox("Appliquer smote", options=["True", "False"]) == "True"
@@ -53,12 +52,6 @@ class Interface:
                 verbose = st.selectbox("Verbosité : ", options=["True", "False"], key="6") == "True"
             
         file = st.file_uploader("Uploader vos données : ", type=["csv", "json", "pkl", "joblib", "xls"], key="7", accept_multiple_files=False)
-        # bar = st.progress(value=0, text="Preogression")
-        # with st.spinner(show_time=True, text="Progression"):
-        #     import time
-        #     for i in range(100):
-        #         time.sleep(1)
-        #         bar.progress(i + 1)
         if file:
             ext = os.path.splitext(file.name)[-1].lower()
             func = pd.read_csv
@@ -178,12 +171,6 @@ class Interface:
                     
                 if "predict" in what:
                     st.header("Prédiction : ")
-                    # for k, v in returned["preds"].items():
-                    #     if v:
-                    #         st.write(k)
-                    #         print(v)
-                    #         st.dataframe(pd.DataFrame((v)))
-                    #         st.divider()
                     st.dataframe(pd.DataFrame(returned["preds"]))
                     for k, v in returned["preds"].items():
                         st.subheader(str(k).capitalize())
