@@ -27,7 +27,7 @@ class Interface:
         st.set_page_config(
             page_title="SmartPredictor"
             )
-        st.title("🤖 SmartPredictor")
+        st.title("🤖 SmartPredictor - by @hounsoubenny-cyber")
         st.caption("Auto-ML · Détecte ton problème et entraîne le bon modèle")
         with st.sidebar:
             st.header("Configuration")
@@ -97,7 +97,6 @@ class Interface:
                 "max_iter": max_iter,
                 "dataset_path": dataset_path,
                 "smote": smote,
-                "sam": "sam"
                 }
             
             if st.button("Démarrer !", type="secondary", icon=":material/mood:", width="stretch", key="10"):
